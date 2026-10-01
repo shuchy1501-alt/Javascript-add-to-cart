@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="todo"> <br>
+    <button id="btn">submit</button>
+    <ul id="list">
+    </ul>
+    <script>
+        //   document.getElementById("btn").onclick= 
+        document.getElementById("btn").addEventListener("click", function () {
+            let todo_Value = document.getElementById("todo");
+            let list = document.getElementById("list");
+            if (todo_Value.value == "") {
+                alert("pls enter the value");
+            } else {
+                list.innerHTML += `<li>${todo_Value.value}  <button onclick="deleteItem(this)" >Delete</button></li>`;
+                todo_Value.value = "";
+            }
+        });
+
+
+        function deleteItem(abc) {
+            abc.parentElement.remove();
+        }
+
+        
+     
+    </script>
+</body>
+
+</html>

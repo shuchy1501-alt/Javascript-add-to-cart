@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.setAttribute("data-bs-theme", localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"))</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+      <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🛍️%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/theme.css">
+    <title>Shopping Cart</title>
+    <style>
+        .cart-wrapper {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+        }
+
+        .product-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .summary-card {
+            background: white;
+            border-radius: 12px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .checkout-btn {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #4f46e5, #4338ca);
+        }
+
+        .remove-btn {
+            color: #dc2626;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .remove-btn:hover {
+            color: #991b1b;
+        }
+
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: #f3f4f6;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .discount-badge {
+            background: #dcfce7;
+            color: #166534;
+            font-size: 0.875rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body data-page="cart">
+       <div id="site-nav"></div>
+    <div class="cart-wrapper">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Cart Items Section -->
+                <div class="col-lg-8">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="mb-0">Shopping Cart</h4>
+                        <span class="text-muted item_count"></span>
+                        <button class="btn btn-sm btn-outline-danger d-none" id="clear-cart">Clear cart</button>
+                    </div>
+
+                    <!-- Product Cards -->
+                    <div class="d-flex flex-column gap-3 show_products">
+                        <!-- Product 1 -->
+                        
+
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="col-lg-4">
+                    <div class="summary-card p-4 shadow-sm">
+                        <h5 class="mb-4">Order Summary</h5>
+
+                        <div class="d-flex justify-content-between mb-3"><span class="text-muted">Subtotal</span><span id="subtotal"></span></div>
+                        <div class="d-flex justify-content-between mb-3"><span class="text-muted">Product discount</span><span class="text-success" id="product-discount"></span></div>
+                        <div class="d-flex justify-content-between mb-3 d-none" id="promo-row"><span class="text-muted">Promo discount</span><span class="text-success" id="promo-discount"></span></div>
+                        <div class="d-flex justify-content-between mb-3"><span class="text-muted">Shipping</span><span id="shipping"></span></div>
+                        <div class="d-flex justify-content-between mb-3"><span class="text-muted">Tax (5%)</span><span id="tax"></span></div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2"><span class="fw-bold">Total</span><span class="fw-bold fs-5" id="total"></span></div>
+                        <small class="text-success d-block mb-1" id="saved"></small>
+                        <small class="text-muted d-block mb-3" id="ship-hint"></small>
+
+                        <div class="mb-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="promo-input" placeholder="Promo code (SAVE10)">
+                                <button class="btn btn-outline-secondary" type="button" id="promo-btn">Apply</button>
+                            </div>
+                            <small id="promo-msg"></small>
+                        </div>
+
+                        <button class="btn btn-primary checkout-btn w-100 mb-3" id="checkout">
+                            Proceed to Checkout
+                        </button>
+                        
+                        <div class="d-flex justify-content-center gap-2">
+                            <i class="bi bi-shield-check text-success"></i>
+                            <small class="text-muted">Secure checkout</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div id="site-footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

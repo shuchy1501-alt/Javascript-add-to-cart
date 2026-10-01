@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>document.documentElement.setAttribute("data-bs-theme", localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"))</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShopEase | Our Products</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🛍️%3C/text%3E%3C/svg%3E">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-page="shop">
+    <div id="site-nav"></div>
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Find something you'll love</h1>
+            <p class="mb-0 opacity-75">Browse hundreds of products, save favourites, and check out in seconds.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="toolbar shadow-sm">
+            <div class="row g-2 align-items-center">
+                <div class="col-lg-4"><div class="input-group">
+                    <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                    <input type="search" id="search" class="form-control" placeholder="Search products or brands...">
+                </div></div>
+                <div class="col-6 col-lg-3"><select id="category" class="form-select"><option value="">All categories</option></select></div>
+                <div class="col-6 col-lg-3"><select id="sort" class="form-select">
+                    <option value="">Sort: Featured</option><option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option><option value="rating">Top rated</option>
+                    <option value="discount">Biggest discount</option></select></div>
+                <div class="col-12 col-lg-2"><button id="wish-toggle" class="btn btn-outline-danger w-100"><i class="bi bi-heart"></i> Wishlist only</button></div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center my-3">
+            <span class="text-muted" id="result-count"></span>
+        </div>
+        <div class="row g-4 showProduct"></div>
+        <div class="text-center mt-4"><button id="load-more" class="btn btn-outline-primary px-4 d-none">Load more</button></div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <div class="modal fade" id="productModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content"><button type="button" class="btn-close position-absolute end-0 top-0 m-3" style="z-index:5" data-bs-dismiss="modal"></button>
+        <div class="modal-body p-4" id="modal-body"></div></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
