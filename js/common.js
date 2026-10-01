@@ -125,11 +125,11 @@ function renderChrome() {
     const nav = document.getElementById("site-nav"), foot = document.getElementById("site-footer");
     if (nav) nav.innerHTML = `
     <nav class="navbar navbar-expand-lg site-nav sticky-top"><div class="container">
-      <a class="navbar-brand" href="Ecommerce.html"><i class="bi bi-bag-heart-fill"></i> ShopEase</a>
+      <a class="navbar-brand" href="index.html"><i class="bi bi-bag-heart-fill"></i> ShopEase</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-        <li class="nav-item"><a class="nav-link ${page === "shop" ? "active" : ""}" href="Ecommerce.html">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="Ecommerce.html?wishlist=1"><i class="bi bi-heart"></i> Wishlist <span class="wish_count"></span></a></li>
+        <li class="nav-item"><a class="nav-link ${page === "shop" ? "active" : ""}" href="index.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html?wishlist=1"><i class="bi bi-heart"></i> Wishlist <span class="wish_count"></span></a></li>
         <li class="nav-item"><a class="nav-link ${page === "orders" ? "active" : ""}" href="orders.html">My Orders</a></li>
         <li class="nav-item"><a class="nav-link ${page === "cart" ? "active" : ""}" href="cart.html"><i class="bi bi-cart3 fs-5 position-relative cart_items_count"></i> Cart</a></li>
       <li class="nav-item"><button class="nav-link btn btn-link" id="theme-toggle" aria-label="Toggle dark mode"></button></li>

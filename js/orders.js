@@ -11,14 +11,14 @@ if (placed) {
         <h4 class="mt-2">Thank you, ${esc(placed.customer.name.split(" ")[0])}! Your order is placed.</h4>
         <p class="text-muted mb-1">Order number: <b>${esc(placed.id)}</b></p>
         <p class="text-muted mb-3">Total ${money(placed.totals.total)} &middot; ${esc(placed.payment)}</p>
-        <a href="Ecommerce.html" class="btn btn-primary">Continue shopping</a>
+        <a href="index.html" class="btn btn-primary">Continue shopping</a>
       </div>`;
 }
 
 const row = (l, v, cls = "") => `<div class="d-flex justify-content-between small ${cls}"><span class="text-muted">${l}</span><span>${v}</span></div>`;
 document.getElementById("orders").innerHTML = orders.length === 0
     ? `<div class="bg-white rounded-3 shadow-sm p-5 text-center"><i class="bi bi-receipt display-4 text-muted"></i>
-       <h5 class="mt-3">No orders yet</h5><a href="Ecommerce.html" class="btn btn-primary mt-2">Start shopping</a></div>`
+       <h5 class="mt-3">No orders yet</h5><a href="index.html" class="btn btn-primary mt-2">Start shopping</a></div>`
     : orders.map((o) => `
       <details class="bg-white rounded-3 shadow-sm p-3 mb-3" ${o.id === newId ? "open" : ""}>
         <summary class="d-flex flex-wrap justify-content-between align-items-center gap-2" role="button">

@@ -15,7 +15,7 @@ Products come from the free [DummyJSON](https://dummyjson.com/products) API. Car
 ## Project structure
 ```
 cart/
-├── Ecommerce.html     Shop page (start here)
+├── index.html     Shop page (start here)
 ├── cart.html          Shopping cart
 ├── checkout.html      Checkout form
 ├── orders.html        Order confirmation + My Orders
@@ -33,7 +33,7 @@ cart/
 ```
 
 ## How to run
-No install needed. Open `Ecommerce.html` in a browser (internet is required for the product API and Bootstrap CDN).
+No install needed. Open `index.html` in a browser (internet is required for the product API and Bootstrap CDN).
 For best results use a local server, e.g. the VS Code **Live Server** extension, or `python -m http.server`.
 
 ## Settings

@@ -11,7 +11,7 @@ function renderCart() {
         ? `<div class="product-card p-5 shadow-sm text-center">
              <i class="bi bi-cart-x display-4 text-muted"></i>
              <h5 class="mt-3">Your cart is empty</h5>
-             <a href="Ecommerce.html" class="btn btn-primary mt-2">Continue shopping</a>
+             <a href="index.html" class="btn btn-primary mt-2">Continue shopping</a>
            </div>`
         : cart.map((p) => {
             const d = p.discountPercentage || 0;
